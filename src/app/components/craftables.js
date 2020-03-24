@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Symbol } from './symbols';
+import Symbol from './symbols';
 
 const Wrapper = styled.div`
   padding: 20px 20%;
@@ -41,32 +41,29 @@ const Amount = styled.span`
   display: block;
 `;
 
-const multiplier = (key, amount) => {
-  switch (key) {
-    case 'goblin-sapper-charge':
-      return amount;
-    case 'dense-dynamite':
-      return amount * 2;
-    case 'thorium-grenade':
-      return amount * 3;
-  }
-};
-
-export default function Explosives ({ items = {}, onScroll = () => { } }) {
+export default ({
+  multipliers = {},
+  items = {},
+  onScroll = () => { }
+}) => {
   return <Wrapper>
     <List>
       {Object
         .keys(items)
-        .map(key => <Item key={key}>
-          <Button
-            onWheel={(e) => onScroll(e, key)}>
-            <Symbol image={key} />
-          </Button>
-          {!!items[key] &&
-            <Amount>
-              {multiplier(key, items[key])}x
+        .map((key) => {
+          const amount = items[key];
+          const multiplier = multipliers[key] || 1;
+          return <Item key={key}>
+            <Button
+              onWheel={(e) => onScroll(e, key)}>
+              <Symbol image={key} />
+            </Button>
+            {!!amount &&
+              <Amount>
+                {multiplier * amount}x
             </Amount>}
-        </Item>)}
+          </Item>
+        })}
     </List>
   </Wrapper>;
 };

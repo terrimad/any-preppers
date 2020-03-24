@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Symbol } from './symbols';
+import Symbol from './symbols';
 
 const List = styled.ul`
   padding: 0 20%;
@@ -18,7 +18,7 @@ const Amount = styled.span`
   margin: 0 0 0 10px;
 `;
 
-export default function Mats ({ mats = {} }) {
+export default ({ mats = {} }) => {
   if (Object.keys(mats).length === 0) {
     return null;
   }

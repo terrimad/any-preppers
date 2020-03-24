@@ -12,16 +12,16 @@ const createWindow = () => {
     width: 600,
     height: 875,
     icon: '../icon.ico',
-    resizable: false,
+    // resizable: false,
   });
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
-  mainWindow.removeMenu();
+  // mainWindow.removeMenu();
 };
 
 // This method will be called when Electron has finished

@@ -11,6 +11,16 @@ rules.push({
   }
 });
 
+rules.push({
+  test: /\.(png|jpe?g|gif)$/i,
+  use: [
+    {
+      loader: 'file-loader',
+    },
+  ],
+});
+
+
 module.exports = {
   // Put your normal webpack config below here
   module: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Symbol from './symbols';
+import Symbol, { Amount } from './symbols';
 
 const List = styled.ul`
   padding: 0 20%;
@@ -10,12 +10,9 @@ const List = styled.ul`
 const Item = styled.li`
   margin: 20px 0;
   display: flex;
-`;
-
-const Amount = styled.span`
-  font-size: 30px;
-  line-height: 70px;
-  margin: 0 0 0 10px;
+  >:first-of-type {
+    margin: 0 10px 0 0;
+  }
 `;
 
 export default ({ mats = {} }) => {

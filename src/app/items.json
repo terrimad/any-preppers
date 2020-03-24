@@ -1,0 +1,38 @@
+{
+  "goblin-sapper-charge": {
+    "mageweave-cloth": 1,
+    "solid-blasting-powder": 3,
+    "unstable-trigger": 1
+  },
+  "thorium-grenade": {
+    "thorium-widget": 1,
+    "thorium-bar": 3,
+    "dense-blasting-powder": 3,
+    "runecloth": 3
+  },
+  "dense-dynamite": {
+    "dense-blasting-powder": 2,
+    "runecloth": 3
+  },
+  "thorium-widget": {
+    "thorium-bar": 3,
+    "runecloth": 1
+  },
+  "unstable-trigger": {
+    "mageweave-cloth": 1,
+    "mithril-bar": 1,
+    "solid-blasting-powder": 1
+  },
+  "mithril-bar": {
+    "mithril-ore": 1
+  },
+  "thorium-bar": {
+    "thorium-ore": 1
+  },
+  "solid-blasting-powder": {
+    "solid-stone": 2
+  },
+  "dense-blasting-powder": {
+    "dense-stone": 2
+  }
+}

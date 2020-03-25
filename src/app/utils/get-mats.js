@@ -1,21 +1,23 @@
-import items from '../items.json';
+import db from '../db.json';
 
 const getMats = (key, multiplier = 1, mats = {}) => {
-  const item = items[key];
+  const item = db[key];
 
   if (item) {
-    Object
-      .keys(item)
-      .forEach((key) => {
-        const amount = item[key];
-        if (items[key]) {
-          getMats(key, amount, mats);
-        } else if (mats[key]) {
-          mats[key] = mats[key] + (amount * multiplier);
-        } else {
-          mats[key] = (amount * multiplier);
-        }
-      });
+    if (item.mats) {
+      Object
+        .keys(item.mats)
+        .forEach((key) => {
+          const amount = item.mats[key];
+          if (db[key]) {
+            getMats(key, amount, mats);
+          } else {
+            mats[key] = (mats[key] || 0) + (amount * multiplier);
+          }
+        });
+    } else {
+      mats[key] = (mats[key] || 0) + multiplier;
+    }
   }
 
   return mats;

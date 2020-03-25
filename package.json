@@ -98,6 +98,7 @@
     "@emotion/styled": "^10.0.27",
     "electron-squirrel-startup": "^1.0.0",
     "emotion-theming": "^10.0.27",
+    "htmr": "^0.8.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "wouter": "^2.4.0"

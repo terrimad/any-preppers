@@ -11,9 +11,10 @@ const theme = {
     text: '#A7A7A7',
     border: '#A7A7A7',
   },
+  font: 'Open Sans',
   iconSize: '60px',
-  borderSize: '1px',
-  borderRadius: '1px',
+  borderSize: '2px',
+  borderRadius: '5px',
 };
 
 export default function App () {
@@ -45,8 +46,8 @@ const Back = () => {
 
 const Wrapper = styled.div`
   * {
-      color: ${p => p.theme.colors.text };
-    font-family: 'Open Sans';
+    color: ${p => p.theme.colors.text };
+    font-family: ${p => p.theme.font };
   }
 `;
 

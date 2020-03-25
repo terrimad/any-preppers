@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Symbol, { Amount as AmountBase } from './symbols';
+import db from '../db.json';
+import Entity, { Amount as AmountBase } from './entity';
 
 export default ({
   multipliers = {},
@@ -14,16 +15,14 @@ export default ({
         .map((key) => {
           const amount = items[key];
           const multiplier = multipliers[key] || 1;
-          return <Item key={key}>
+
+          return <ListItem key={key}>
             <Button
               onWheel={(e) => onScroll(e, key)}>
-              <Symbol image={key} />
+              <Entity id={key} />
             </Button>
-            {!!amount &&
-              <Amount>
-                {multiplier * amount}x
-            </Amount>}
-          </Item>
+            {!!amount && <Amount>{multiplier * amount}x</Amount>}
+          </ListItem>
         })}
     </List>
   </Wrapper>;
@@ -40,7 +39,7 @@ const List = styled.ul`
   justify-content: space-between;
 `;
 
-const Item = styled.li`
+const ListItem = styled.li`
   display: flex;
   flex-direction: column;
   &:not(:last-of-type) {

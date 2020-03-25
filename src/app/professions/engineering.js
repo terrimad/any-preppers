@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Craftables, Mats } from '../components'
-import { getMats, calculateMats } from '../utils';
+import { calculateMats } from '../utils';
 
 export default () => {
   const [mats, setMats] = useState({});

@@ -1,0 +1,102 @@
+{
+  "goblin-sapper-charge": {
+    "id": "10646",
+    "type": "item",
+    "mats": {
+      "mageweave-cloth": 1,
+      "solid-blasting-powder": 3,
+      "unstable-trigger": 1
+    }
+  },
+  "thorium-grenade": {
+    "id": "15993",
+    "type": "item",
+    "mats": {
+      "thorium-widget": 1,
+      "thorium-bar": 3,
+      "dense-blasting-powder": 3,
+      "runecloth": 3
+    }
+  },
+  "dense-dynamite": {
+    "id": "18641",
+    "type": "item",
+    "mats": {
+      "dense-blasting-powder": 2,
+      "runecloth": 3
+    }
+  },
+  "thorium-widget": {
+    "id": "15994",
+    "type": "item",
+    "mats": {
+      "thorium-bar": 3,
+      "runecloth": 1
+    }
+  },
+  "unstable-trigger": {
+    "id": "10560",
+    "type": "item",
+    "mats": {
+      "mageweave-cloth": 1,
+      "mithril-bar": 1,
+      "solid-blasting-powder": 1
+    }
+  },
+  "mithril-bar": {
+    "id": "3860",
+    "type": "item",
+    "mats": {
+      "mithril-ore": 1
+    }
+  },
+  "thorium-bar": {
+    "id": "12359",
+    "type": "item",
+    "mats": {
+      "thorium-ore": 1
+    }
+  },
+  "solid-blasting-powder": {
+    "id": "10505",
+    "type": "item",
+    "mats": {
+      "solid-stone": 2
+    }
+  },
+  "dense-blasting-powder": {
+    "id": "15992",
+    "type": "item",
+    "mats": {
+      "dense-stone": 2
+    }
+  },
+  "dense-stone": {
+    "id": "12365",
+    "type": "item"
+  },
+  "solid-stone": {
+    "id": "7912",
+    "type": "item"
+  },
+  "thorium-ore": {
+    "id": "10620",
+    "type": "item"
+  },
+  "mithril-ore": {
+    "id": "3858",
+    "type": "item"
+  },
+  "mageweave-cloth": {
+    "id": "4338",
+    "type": "item"
+  },
+  "runecloth": {
+    "id": "14047",
+    "type": "item"
+  },
+  "engineering": {
+    "id": "12656",
+    "type": "spell"
+  }
+}

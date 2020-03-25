@@ -2,6 +2,7 @@ import getMats from './get-mats';
 
 export default (items) => {
   const mats = {};
+
   Object
     .keys(items)
     .forEach((key) => {

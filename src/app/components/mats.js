@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Symbol, { Amount } from './symbols';
+import Entity, { Amount } from './entity';
+import db from '../db.json';
 
 const List = styled.ul`
   padding: 0 20%;
   list-style: none;
 `;
 
-const Item = styled.li`
+const ListItem = styled.li`
   margin: 20px 0;
   display: flex;
   >:first-of-type {
@@ -25,10 +26,10 @@ export default ({ mats = {} }) => {
       .keys(mats)
       .sort()
       .map(key => {
-        return <Item key={key}>
-          <Symbol image={key} />
+        return <ListItem key={key}>
+          <Entity id={key} />
           <Amount>{mats[key]}x</Amount>
-        </Item>;
+        </ListItem>;
       })}
   </List>;
 };

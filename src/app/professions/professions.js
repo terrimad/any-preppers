@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'wouter';
-import { Symbol, Button } from '../components';
+import { Entity, Button } from '../components';
 
 
 
@@ -9,13 +9,13 @@ export default () => {
   return <Wrapper>
     <Header>Choose a profession</Header>
     <List>
-      <Item>
+      <ListItem>
         <Link href="/engineering">
           <Button>
-            <Symbol image="engineering" />
+            <Entity id="engineering" />
           </Button>
         </Link>
-      </Item>
+      </ListItem>
     </List>
   </Wrapper>
 };
@@ -30,7 +30,7 @@ const List = styled.ul`
   justify-content: center;
 `;
 
-const Item = styled.li`
+const ListItem = styled.li`
   margin: 0 10px;
 `;
 

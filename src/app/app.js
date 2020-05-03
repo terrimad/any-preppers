@@ -1,35 +1,37 @@
-import React from 'react';
 import styled from '@emotion/styled';
 import { ThemeProvider } from 'emotion-theming'
-import { Engineering, Professions } from './professions';
-import { Link, Switch, Route, useLocation } from 'wouter';
-import { Caret, Button as ButtonBase } from './components';
-import Router from './router';
+import React from 'react';
+import { Link, Route, Switch, useLocation } from 'wouter';
+
+import { Caret, SmugPepe } from './components';
+import { Alchemy, Engineering, Professions } from './professions';
 
 const theme = {
   colors: {
-    text: '#A7A7A7',
-    border: '#A7A7A7',
+    text: '#F7F7F7',
+    border: '#F7F7F7',
   },
   font: 'Open Sans',
-  iconSize: '60px',
-  borderSize: '2px',
-  borderRadius: '5px',
+  labelSize: '68px',
+  borderSize: '1px'
 };
 
-export default function App () {
-  return <Router>
-    <ThemeProvider theme={theme}>
-      <Wrapper>
-        <Header>Crafty</Header>
-        <Back />
-        <Switch>
-          <Route path="/" component={Professions} />
-          <Route path="/engineering" component={Engineering} />
-        </Switch>
-      </Wrapper>
-    </ThemeProvider>
-  </Router>;
+export default () => {
+  return <ThemeProvider theme={theme}>
+    <Wrapper>
+      <Header>
+        any preppers?
+        <SmugPepe />
+      </Header>
+
+      <Back />
+      <Switch>
+        <Route path="/" component={Professions} />
+        <Route path="/engineering" component={Engineering} />
+        <Route path="/alchemy" component={Alchemy} />
+      </Switch>
+    </Wrapper>
+  </ThemeProvider>;
 };
 
 const Back = () => {
@@ -37,10 +39,10 @@ const Back = () => {
   if (location === '/') {
     return null;
   }
-  return <Link href="/">
-    <Button title="Home">
+  return <Link href="/" title="Back">
+    <BackLink>
       <Caret />
-    </Button>
+    </BackLink>
   </Link>;
 };
 
@@ -48,10 +50,14 @@ const Wrapper = styled.div`
   * {
     color: ${p => p.theme.colors.text };
     font-family: ${p => p.theme.font };
+    font-weight: 300;
   }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `;
 
-const Button = styled(ButtonBase)`
+const BackLink = styled.a`
   height: 40px;
   width: 25px;
   position: absolute;
@@ -61,9 +67,10 @@ const Button = styled(ButtonBase)`
 
 const Header = styled.h1`
   font-size: 50px;
-  font-weight: 700;
-  margin: 20px 0;
-  display: block;
-  text-align: center;
+  padding: 20px 0;
+  margin: 0;
   letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

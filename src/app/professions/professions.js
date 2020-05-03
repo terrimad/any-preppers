@@ -1,19 +1,21 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import React from 'react';
 import { Link } from 'wouter';
-import { Entity, Button } from '../components';
 
-
+import { Entity } from '../components';
 
 export default () => {
   return <Wrapper>
-    <Header>Choose a profession</Header>
+    <Header>crafting</Header>
     <List>
       <ListItem>
         <Link href="/engineering">
-          <Button>
-            <Entity id="engineering" />
-          </Button>
+          <Entity id="engineering" />
+        </Link>
+      </ListItem>
+      <ListItem>
+        <Link href="/alchemy">
+          <Entity id="alchemy" />
         </Link>
       </ListItem>
     </List>

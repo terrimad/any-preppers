@@ -1,18 +1,34 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import Entity, { Amount } from './entity';
+import React from 'react';
+
 import db from '../db.json';
+import Entity, { Amount } from './entity';
 
 const List = styled.ul`
-  padding: 0 20%;
+  padding: 30px 20%;
   list-style: none;
+  overflow-y: overlay;
+  flex: 1;
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: rgba(255,255,255,.2);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${p => p.theme.colors.text};
+  }
 `;
 
 const ListItem = styled.li`
-  margin: 20px 0;
   display: flex;
+  &:not(:last-child) {
+    margin: 0 0 30px 0;
+  }
   >:first-of-type {
-    margin: 0 10px 0 0;
+    margin: 0 15px 0 0;
   }
 `;
 

@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
-import db from '../db.json';
 import Entity, { Amount } from './entity';
 
 const List = styled.ul`

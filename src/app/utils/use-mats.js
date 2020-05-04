@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import db from '../db.json';
+import { crafting } from '../db.json';
 import { calculateMats } from '../utils';
 
 export default (type = '') => {
@@ -11,10 +11,10 @@ export default (type = '') => {
     () => {
       if (type) {
         const mats = Object
-          .keys(db)
+          .keys(crafting)
           .reduce(
             (acc, curr) => {
-              const item = db[curr];
+              const item = crafting[curr];
               if (item && item.craftable && item.profession === type) {
                 acc[curr] = 0;
               }

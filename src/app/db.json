@@ -1,210 +1,212 @@
 {
-  "engineering": {
-    "id": "12656",
-    "type": "spell"
-  },
-  "alchemy": {
-    "id": "11611",
-    "type": "spell"
-  },
-  "goblin-sapper-charge": {
-    "id": "10646",
-    "type": "item",
-    "mats": {
-      "mageweave-cloth": 1,
-      "solid-blasting-powder": 3,
-      "unstable-trigger": 1
+  "crafting": {
+    "engineering": {
+      "id": "12656",
+      "type": "spell"
     },
-    "craftable": true,
-    "profession": "engineering"
-  },
-  "thorium-grenade": {
-    "id": "15993",
-    "type": "item",
-    "mats": {
-      "thorium-widget": 1,
-      "thorium-bar": 3,
-      "dense-blasting-powder": 3,
-      "runecloth": 3
+    "alchemy": {
+      "id": "11611",
+      "type": "spell"
     },
-    "craftable": true,
-    "profession": "engineering"
-  },
-  "dense-dynamite": {
-    "id": "18641",
-    "type": "item",
-    "mats": {
-      "dense-blasting-powder": 2,
-      "runecloth": 3
+    "goblin-sapper-charge": {
+      "id": "10646",
+      "type": "item",
+      "mats": {
+        "mageweave-cloth": 1,
+        "solid-blasting-powder": 3,
+        "unstable-trigger": 1
+      },
+      "craftable": true,
+      "profession": "engineering"
     },
-    "craftable": true,
-    "profession": "engineering"
-  },
-  "thorium-widget": {
-    "id": "15994",
-    "type": "item",
-    "mats": {
-      "thorium-bar": 3,
-      "runecloth": 1
+    "thorium-grenade": {
+      "id": "15993",
+      "type": "item",
+      "mats": {
+        "thorium-widget": 1,
+        "thorium-bar": 3,
+        "dense-blasting-powder": 3,
+        "runecloth": 3
+      },
+      "craftable": true,
+      "profession": "engineering"
     },
-    "profession": "engineering"
-  },
-  "unstable-trigger": {
-    "id": "10560",
-    "type": "item",
-    "mats": {
-      "mageweave-cloth": 1,
-      "mithril-bar": 1,
-      "solid-blasting-powder": 1
+    "dense-dynamite": {
+      "id": "18641",
+      "type": "item",
+      "mats": {
+        "dense-blasting-powder": 2,
+        "runecloth": 3
+      },
+      "craftable": true,
+      "profession": "engineering"
     },
-    "profession": "engineering"
-  },
-  "mithril-bar": {
-    "id": "3860",
-    "type": "item",
-    "mats": {
-      "mithril-ore": 1
+    "thorium-widget": {
+      "id": "15994",
+      "type": "item",
+      "mats": {
+        "thorium-bar": 3,
+        "runecloth": 1
+      },
+      "profession": "engineering"
     },
-    "profession": "engineering"
-  },
-  "thorium-bar": {
-    "id": "12359",
-    "type": "item",
-    "mats": {
-      "thorium-ore": 1
+    "unstable-trigger": {
+      "id": "10560",
+      "type": "item",
+      "mats": {
+        "mageweave-cloth": 1,
+        "mithril-bar": 1,
+        "solid-blasting-powder": 1
+      },
+      "profession": "engineering"
     },
-    "profession": "engineering"
-  },
-  "solid-blasting-powder": {
-    "id": "10505",
-    "type": "item",
-    "mats": {
-      "solid-stone": 2
+    "mithril-bar": {
+      "id": "3860",
+      "type": "item",
+      "mats": {
+        "mithril-ore": 1
+      },
+      "profession": "engineering"
     },
-    "profession": "engineering"
-  },
-  "dense-blasting-powder": {
-    "id": "15992",
-    "type": "item",
-    "mats": {
-      "dense-stone": 2
+    "thorium-bar": {
+      "id": "12359",
+      "type": "item",
+      "mats": {
+        "thorium-ore": 1
+      },
+      "profession": "engineering"
     },
-    "profession": "engineering"
-  },
-  "dense-stone": {
-    "id": "12365",
-    "type": "item"
-  },
-  "solid-stone": {
-    "id": "7912",
-    "type": "item"
-  },
-  "thorium-ore": {
-    "id": "10620",
-    "type": "item"
-  },
-  "mithril-ore": {
-    "id": "3858",
-    "type": "item"
-  },
-  "mageweave-cloth": {
-    "id": "4338",
-    "type": "item"
-  },
-  "runecloth": {
-    "id": "14047",
-    "type": "item"
-  },
-  "elixir-of-the-mongoose": {
-    "id": "13452",
-    "type": "item",
-    "mats": {
-      "mountain-silversage": 2,
-      "plaguebloom": 2,
-      "crystal-vial": 1
+    "solid-blasting-powder": {
+      "id": "10505",
+      "type": "item",
+      "mats": {
+        "solid-stone": 2
+      },
+      "profession": "engineering"
     },
-    "craftable": true,
-    "profession": "alchemy"
-  },
-  "flask-of-the-titans": {
-    "id": "13510",
-    "type": "item",
-    "mats": {
-      "gromsblood": 30,
-      "stonescale-oil": 30,
-      "black-lotus": 1,
-      "crystal-vial": 1
+    "dense-blasting-powder": {
+      "id": "15992",
+      "type": "item",
+      "mats": {
+        "dense-stone": 2
+      },
+      "profession": "engineering"
     },
-    "craftable": true,
-    "profession": "alchemy"
-  },
-  "flask-of-distilled-wisdom": {
-    "id": "13511",
-    "type": "item",
-    "mats": {
-      "dreamfoil": 30,
-      "icecap": 10,
-      "black-lotus": 1,
-      "crystal-vial": 1
+    "dense-stone": {
+      "id": "12365",
+      "type": "item"
     },
-    "craftable": true,
-    "profession": "alchemy"
-  },
-  "flask-of-supreme-power": {
-    "id": "13512",
-    "type": "item",
-    "mats": {
-      "dreamfoil": 30,
-      "mountain-silversage": 10,
-      "black-lotus": 1,
-      "crystal-vial": 1
+    "solid-stone": {
+      "id": "7912",
+      "type": "item"
     },
-    "craftable": true,
-    "profession": "alchemy"
-  },
-  "stonescale-oil": {
-    "id": "13423",
-    "type": "item",
-    "mats": {
-      "stonescale-eel": 1,
-      "leaded-vial": 1
+    "thorium-ore": {
+      "id": "10620",
+      "type": "item"
     },
-    "profession": "alchemy"
-  },
-  "mountain-silversage": {
-    "id": "13465",
-    "type": "item"
-  },
-  "icecap": {
-    "id": "13467",
-    "type": "item"
-  },
-  "dreamfoil": {
-    "id": "13463",
-    "type": "item"
-  },
-  "gromsblood": {
-    "id": "8846",
-    "type": "item"
-  },
-  "black-lotus": {
-    "id": "13468",
-    "type": "item"
-  },
-  "plaguebloom": {
-    "id": "13466",
-    "type": "item"
-  },
-  "stonescale-eel": {
-    "id": "13422",
-    "type": "item"
-  },
-  "crystal-vial": {
-    "id": "8925",
-    "type": "item"
-  },
-  "leaded-vial": {
-    "id": "3372",
-    "type": "item"
+    "mithril-ore": {
+      "id": "3858",
+      "type": "item"
+    },
+    "mageweave-cloth": {
+      "id": "4338",
+      "type": "item"
+    },
+    "runecloth": {
+      "id": "14047",
+      "type": "item"
+    },
+    "elixir-of-the-mongoose": {
+      "id": "13452",
+      "type": "item",
+      "mats": {
+        "mountain-silversage": 2,
+        "plaguebloom": 2,
+        "crystal-vial": 1
+      },
+      "craftable": true,
+      "profession": "alchemy"
+    },
+    "flask-of-the-titans": {
+      "id": "13510",
+      "type": "item",
+      "mats": {
+        "gromsblood": 30,
+        "stonescale-oil": 30,
+        "black-lotus": 1,
+        "crystal-vial": 1
+      },
+      "craftable": true,
+      "profession": "alchemy"
+    },
+    "flask-of-distilled-wisdom": {
+      "id": "13511",
+      "type": "item",
+      "mats": {
+        "dreamfoil": 30,
+        "icecap": 10,
+        "black-lotus": 1,
+        "crystal-vial": 1
+      },
+      "craftable": true,
+      "profession": "alchemy"
+    },
+    "flask-of-supreme-power": {
+      "id": "13512",
+      "type": "item",
+      "mats": {
+        "dreamfoil": 30,
+        "mountain-silversage": 10,
+        "black-lotus": 1,
+        "crystal-vial": 1
+      },
+      "craftable": true,
+      "profession": "alchemy"
+    },
+    "stonescale-oil": {
+      "id": "13423",
+      "type": "item",
+      "mats": {
+        "stonescale-eel": 1,
+        "leaded-vial": 1
+      },
+      "profession": "alchemy"
+    },
+    "mountain-silversage": {
+      "id": "13465",
+      "type": "item"
+    },
+    "icecap": {
+      "id": "13467",
+      "type": "item"
+    },
+    "dreamfoil": {
+      "id": "13463",
+      "type": "item"
+    },
+    "gromsblood": {
+      "id": "8846",
+      "type": "item"
+    },
+    "black-lotus": {
+      "id": "13468",
+      "type": "item"
+    },
+    "plaguebloom": {
+      "id": "13466",
+      "type": "item"
+    },
+    "stonescale-eel": {
+      "id": "13422",
+      "type": "item"
+    },
+    "crystal-vial": {
+      "id": "8925",
+      "type": "item"
+    },
+    "leaded-vial": {
+      "id": "3372",
+      "type": "item"
+    }
   }
 }

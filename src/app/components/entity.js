@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
-import db from '../db.json';
+import { crafting } from '../db.json';
 import { useRefreshLinks } from '../utils';
 
 export default ({ id, ...other }) => {
-  const item = db[id];
+  const item = crafting[id];
   useRefreshLinks();
 
   if (!item) {

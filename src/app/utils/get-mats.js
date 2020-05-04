@@ -1,7 +1,7 @@
-import db from '../db.json';
+import { crafting } from '../db.json';
 
 const getMats = (key, multiplier = 1, mats = {}) => {
-  const item = db[key];
+  const item = crafting[key];
 
   if (item) {
     if (item.mats) {
@@ -9,7 +9,7 @@ const getMats = (key, multiplier = 1, mats = {}) => {
         .keys(item.mats)
         .forEach((key) => {
           const amount = item.mats[key];
-          if (db[key]) {
+          if (crafting[key]) {
             getMats(key, amount, mats);
           } else {
             mats[key] = (mats[key] || 0) + (amount * multiplier);

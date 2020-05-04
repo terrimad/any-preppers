@@ -32,8 +32,6 @@ const Entity = styled(EntityBase)`
 
 const Wrapper = styled.div`
   padding: 20px 20%;
-  border-top: ${p => `${ p.theme.borderSize } solid ${ p.theme.colors.border }` };
-  border-bottom: ${p => `${ p.theme.borderSize } solid ${ p.theme.colors.border }` };
 `;
 
 const List = styled.ul`

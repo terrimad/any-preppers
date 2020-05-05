@@ -20,6 +20,7 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.1",
     "babel-loader": "^8.1.0",
+    "babel-plugin-emotion": "^10.0.33",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "openport": "^0.0.6",
@@ -33,6 +34,7 @@
     "@emotion/styled": "^10.0.27",
     "emotion-theming": "^10.0.27",
     "htmr": "^0.8.8",
+    "moment": "^2.25.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "wouter": "^2.4.0"

@@ -20,8 +20,8 @@ export default ({ id, ...other }) => {
 }
 
 export const Amount = styled.span`
-  font-size: ${p => `calc(${ p.theme.labelSize }/2)` };
-  line-height: ${p => p.theme.labelSize };
+  font-size: ${p => `calc(${ p.theme.amountLabelSize }/2)` };
+  line-height: ${p => p.theme.amountLabelSize };
 `;
 
 const Item = styled.a`

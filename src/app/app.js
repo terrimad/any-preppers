@@ -8,11 +8,12 @@ import { Alchemy, Engineering, Professions } from './crafting';
 import { Home } from './home';
 
 const theme = {
-  colors: {
-    text: '#F7F7F7'
-  },
   font: 'Open Sans',
-  labelSize: '68px'
+  textColor: '#F7F7F7',
+  amountLabelSize: '68px',
+  boxLabelSize: '30px',
+  circleSize: '80px',
+  circleThickness: 2,
 };
 
 export default () => {
@@ -38,7 +39,7 @@ export default () => {
 
 const Wrapper = styled.div`
   * {
-    color: ${p => p.theme.colors.text };
+    color: ${p => p.theme.textColor };
     font-family: ${p => p.theme.font };
     font-weight: 400;
   }
@@ -52,6 +53,7 @@ const Header = styled.h1`
   margin: 0 0 20px;
   letter-spacing: 2px;
   text-align: center;
+  font-weight: 700;
   a {
     display: inline-flex;
     justify-content: center;

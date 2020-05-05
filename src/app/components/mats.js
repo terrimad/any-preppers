@@ -17,7 +17,7 @@ const List = styled.ul`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: ${p => p.theme.colors.text};
+    background-color: ${p => p.theme.textColor};
   }
 `;
 

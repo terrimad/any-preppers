@@ -1,5 +1,5 @@
-import React from 'react';
 import styled from '@emotion/styled';
+import React from 'react';
 
 export default () => {
   return <Svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 36.1 65.6" space="preserve">
@@ -10,8 +10,8 @@ export default () => {
 const Svg = styled.svg`
   height: 100%;
   width: 100%;
-  stroke: ${p => p.theme.colors.text };
+  stroke: ${p => p.theme.textColor };
   path {
-    fill: ${p => p.theme.colors.text };
+    fill: ${p => p.theme.textColor };
   }
 `;

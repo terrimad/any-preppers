@@ -25,12 +25,8 @@ const List = styled.ul`
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  align-items: center;
 `;
 
 const ListItem = styled.li`
-  &:not(:last-child) {
-    margin: 0 0 20px;
-  }
+  margin: 0 10px;
 `;

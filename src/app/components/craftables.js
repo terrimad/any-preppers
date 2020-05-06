@@ -1,13 +1,20 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import EntityBase, { Amount as AmountBase } from './entity';
 
 export default ({
   multipliers = {},
   items = {},
-  onScroll = () => { }
+  update = () => { }
 }) => {
+  const handleInteraction = useCallback(
+    (e, key) => {
+      update(e, key);
+    },
+    [update],
+  );
+
   return <Wrapper>
     <List>
       {Object
@@ -17,7 +24,11 @@ export default ({
           const multiplier = multipliers[key] || 1;
 
           return <ListItem key={key}>
-            <Entity amount={amount} id={key} onWheel={(e) => onScroll(e, key)} />
+            <Entity
+              amount={amount}
+              id={key}
+              onWheel={e => handleInteraction(e, key)}
+              onKeyDown={e => handleInteraction(e, key)} />
             {!!amount && <Amount>{multiplier * amount}x</Amount>}
           </ListItem>
         })}
@@ -27,7 +38,7 @@ export default ({
 
 const Entity = styled(EntityBase)`
   transition: 200ms ease-out filter;
-  ${p => p.amount === 0 && 'filter: grayscale(1);'}
+  ${p => p.amount === 0 && 'filter: grayscale(1);' }
 `;
 
 const Wrapper = styled.div`

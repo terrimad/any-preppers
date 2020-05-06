@@ -33,10 +33,12 @@ export default (type = '') => {
   const handleMats = useCallback(
     (event, key) => {
       const newItems = Object.assign({}, items);
-      if (event.nativeEvent.wheelDelta > 0) {
-        newItems[key]++;
-      } else if (newItems[key] > 0) {
-        newItems[key]--;
+      if (event.nativeEvent.wheelDelta || event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+        if (event.nativeEvent.wheelDelta > 0 || event.key === 'ArrowUp') {
+          newItems[key]++;
+        } else if (newItems[key] > 0) {
+          newItems[key]--;
+        }
       }
       setItems(newItems);
 

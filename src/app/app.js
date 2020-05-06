@@ -81,9 +81,9 @@ const Header = styled.h1`
 
 export const focusStyling = p => css`
   ${p.theme.tabbing ?
-    `
-  outline: 2px dashed ${p.theme.textColor };
-  outline-offset: 10px;
+  `
+    outline: 1px solid ${p.theme.textColor };
+    outline-offset: 5px;
   ` :
     'outline: none;' }
 `;

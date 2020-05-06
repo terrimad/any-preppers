@@ -8,12 +8,13 @@ const List = styled.ul`
   list-style: none;
   overflow-y: overlay;
   flex: 1;
+  border-top: 1px solid ${p => p.theme.textColor};
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
   }
   
   ::-webkit-scrollbar-track {
-    background-color: rgba(255,255,255,.2);
+    background-color: transparent;
   }
 
   ::-webkit-scrollbar-thumb {

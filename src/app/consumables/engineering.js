@@ -9,7 +9,7 @@ export default () => {
 
   return <>
     <Title label="Engineering" />
-    <Craftables items={items} onScroll={handleMats} />
+    <Craftables items={items} update={handleMats} />
     <Mats mats={mats} />
   </>;
 }

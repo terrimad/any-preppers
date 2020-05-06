@@ -4,7 +4,7 @@ import { Link } from 'wouter';
 
 import { focusStyling } from '../app';
 import { Box, Title } from '../components';
-import Image from '../images/consumables.png';
+import Image from '../images/consumables.jpg';
 
 export default () => {
   return <Link href="/consumables">

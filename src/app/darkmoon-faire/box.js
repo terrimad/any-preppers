@@ -3,7 +3,7 @@ import moment from 'moment-timezone';
 import React, { useMemo } from 'react';
 
 import { Box, Countdown, Title } from '../components';
-import DarkmoonFaireImage from '../images/darkmoon-faire.png';
+import DarkmoonFaireImage from '../images/darkmoon-faire.jpg';
 import { useTimezone } from '../utils';
 import getMonth from './get-month';
 

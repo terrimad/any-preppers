@@ -49,6 +49,9 @@ export default () => {
             <Route path="/consumables/alchemy">
               <Profession profession="alchemy" label="Alchemy" />
             </Route>
+            <Route path="/consumables/blacksmithing">
+              <Profession profession="blacksmithing" label="Blacksmithing" />
+            </Route>
           </Switch>
         </Wrapper>
       </ThemeProvider>

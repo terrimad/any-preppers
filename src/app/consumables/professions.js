@@ -19,6 +19,11 @@ export default () => {
           <Entity id="alchemy" />
         </Link>
       </ListItem>
+      <ListItem>
+        <Link href="/consumables/blacksmithing">
+          <Entity id="blacksmithing" />
+        </Link>
+      </ListItem>
     </List>
   </Wrapper>
 };

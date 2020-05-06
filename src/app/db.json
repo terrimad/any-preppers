@@ -8,6 +8,10 @@
       "id": "11611",
       "type": "spell"
     },
+    "blacksmithing": {
+      "id": "9785",
+      "type": "spell"
+    },
     "goblin-sapper-charge": {
       "id": "10646",
       "type": "item",
@@ -206,6 +210,20 @@
     },
     "leaded-vial": {
       "id": "3372",
+      "type": "item"
+    },
+    "elemental-sharpening-stone": {
+      "id": "18262",
+      "type": "item",
+      "mats": {
+        "elemental-earth": 2,
+        "dense-stone": 3
+      },
+      "craftable": true,
+      "profession": "blacksmithing"
+    },
+    "elemental-earth": {
+      "id": "7067",
       "type": "item"
     }
   },

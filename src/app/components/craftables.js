@@ -54,7 +54,7 @@ const List = styled.ul`
 const ListItem = styled.li`
   display: flex;
   flex-direction: column;
-  margin: 0 15px;
+  margin: 15px;
   text-align: center;
 `;
 

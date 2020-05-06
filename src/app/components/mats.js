@@ -24,7 +24,6 @@ export default ({ mats = {} }) => {
 const List = styled.ul`  
   padding: 20px 10%;
   list-style: none;
-  flex: 1;
   border-top: 1px solid ${p => p.theme.textColor };
   display: flex;
   flex-wrap: wrap;

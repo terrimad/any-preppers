@@ -68,6 +68,7 @@ const Header = styled.h1`
   letter-spacing: 2px;
   text-align: center;
   font-weight: 700;
+  text-shadow: 2px 2px 4px #000000;
   a {
     display: inline-flex;
     justify-content: center;

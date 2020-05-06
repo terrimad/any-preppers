@@ -3,21 +3,19 @@ import React from 'react';
 import { Link } from 'wouter';
 
 import { Entity, Title } from '../components';
-import { useGenerateLocation } from '../utils';
 
 export default () => {
-  const generateLocation = useGenerateLocation();
 
   return <Wrapper>
     <Title label="Professions" />
     <List>
       <ListItem>
-        <Link href={generateLocation('/engineering')}>
+        <Link href="/consumables/engineering">
           <Entity id="engineering" />
         </Link>
       </ListItem>
       <ListItem>
-        <Link href={generateLocation('/alchemy')}>
+        <Link href="/consumables/alchemy">
           <Entity id="alchemy" />
         </Link>
       </ListItem>

@@ -2,12 +2,12 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { ThemeProvider } from 'emotion-theming'
 import React from 'react';
-import { Link, Route, Switch } from 'wouter';
+import { Link, Route, Router, Switch } from 'wouter';
 
 import { SmugPepe } from './components';
 import { Alchemy, Engineering, Professions } from './consumables';
 import { Home } from './home';
-import { TimezoneContext, useTabbing } from './utils';
+import { TimezoneContext, useLocation, useTabbing } from './utils';
 
 const theme = {
   font: 'Open Sans',
@@ -28,26 +28,28 @@ const theme = {
 export default () => {
   const tabbing = useTabbing();
 
-  return <TimezoneContext.Provider value="Europe/Stockholm">
-    <ThemeProvider theme={{ ...theme, tabbing }}>
-      <Wrapper>
-        <Header>
-          <Link to="/">
-            <a tabIndex="0" title="Home">
-              any preppers?
+  return <Router hook={useLocation}>
+    <TimezoneContext.Provider value="Europe/Stockholm">
+      <ThemeProvider theme={{ ...theme, tabbing }}>
+        <Wrapper>
+          <Header>
+            <Link to="/">
+              <a tabIndex="0" title="Home">
+                any preppers?
               <SmugPepe />
-            </a>
-          </Link>
-        </Header>
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/consumables" component={Professions} />
-          <Route path="/consumables/engineering" component={Engineering} />
-          <Route path="/consumables/alchemy" component={Alchemy} />
-        </Switch>
-      </Wrapper>
-    </ThemeProvider>
-  </TimezoneContext.Provider>;
+              </a>
+            </Link>
+          </Header>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/consumables" component={Professions} />
+            <Route path="/consumables/engineering" component={Engineering} />
+            <Route path="/consumables/alchemy" component={Alchemy} />
+          </Switch>
+        </Wrapper>
+      </ThemeProvider>
+    </TimezoneContext.Provider>
+  </Router>;
 };
 
 const Wrapper = styled.div`
@@ -82,7 +84,7 @@ const Header = styled.h1`
 
 export const focusStyling = p => css`
   ${p.theme.tabbing ?
-  `
+    `
     outline: 1px solid ${p.theme.textColor };
     outline-offset: 5px;
   ` :

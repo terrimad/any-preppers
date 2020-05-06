@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
-import Entity, { Amount as AmountBase } from './entity';
+import { List as ListBase, ListItem } from './craftables';
+import Entity, { Amount } from './entity';
 
 export default ({ mats = {} }) => {
   if (Object.keys(mats).length === 0) {
@@ -21,13 +22,8 @@ export default ({ mats = {} }) => {
   </List>;
 };
 
-const List = styled.ul`  
-  padding: 20px 10%;
-  list-style: none;
+const List = styled(ListBase)`
   border-top: 1px solid ${p => p.theme.textColor };
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   
   overflow-y: overlay;
   ::-webkit-scrollbar {
@@ -41,16 +37,4 @@ const List = styled.ul`
   ::-webkit-scrollbar-thumb {
     background-color: ${p => p.theme.textColor };
   }
-`;
-
-const ListItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  margin: 15px;
-  text-align: center;
-`;
-
-const Amount = styled(AmountBase)`
-  line-height: normal;
-  margin: 15px 0 0 0;
 `;

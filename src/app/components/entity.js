@@ -24,6 +24,8 @@ export const Amount = styled.span`
   font-size: ${p => `calc(${ p.theme.amountLabelSize }/2)` };
   line-height: ${p => p.theme.amountLabelSize };
   font-weight: ${p => p.theme.titleFontWeight };
+  line-height: normal;
+  margin: 15px 0 0 0;
 `;
 
 const Hyperlink = styled.a`

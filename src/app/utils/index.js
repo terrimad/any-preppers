@@ -7,3 +7,4 @@ export { default as mapNumber } from './map-number';
 export { default as describeArc } from './describe-arc';
 export { default as TimezoneContext } from './timezone-context';
 export { default as useTimezone } from './use-timezone';
+export { default as useTabbing } from './use-tabbing';

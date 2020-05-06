@@ -1,13 +1,13 @@
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { ThemeProvider } from 'emotion-theming'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, Route, Switch } from 'wouter';
 
 import { SmugPepe } from './components';
 import { Alchemy, Engineering, Professions } from './consumables';
 import { Home } from './home';
-import { TimezoneContext } from './utils';
+import { TimezoneContext, useTabbing } from './utils';
 
 const theme = {
   font: 'Open Sans',
@@ -26,28 +26,7 @@ const theme = {
 };
 
 export default () => {
-  const [tabbing, setTabbing] = useState(true);
-
-  useEffect(
-    () => {
-      const listener = (event) => {
-        if (event.key) {
-          setTabbing(true);
-        } else {
-          setTabbing(false);
-        }
-      };
-
-      document.addEventListener('keydown', listener);
-      document.addEventListener('click', listener);
-
-      return () => {
-        document.removeEventListener('keydown', listener);
-        document.removeEventListener('click', listener);
-      };
-    },
-    [setTabbing],
-  );
+  const tabbing = useTabbing();
 
   return <TimezoneContext.Provider value="Europe/Stockholm">
     <ThemeProvider theme={{ ...theme, tabbing }}>

@@ -1,19 +1,19 @@
 import styled from '@emotion/styled';
-import moment from 'moment';
+import moment from 'moment-timezone';
 import React, { useCallback, useEffect, useState } from 'react';
 
-import { mapNumber } from '../utils';
+import { mapNumber, useTimezone } from '../utils';
 import Circle from './circle';
 
 export default ({ timeTillDate }) => {
+  const timezone = useTimezone();
   const [state, setState] = useState({});
 
   const update = useCallback(
     () => {
-      const then = moment(timeTillDate);
-      const now = moment();
-      const days = then.diff(now, 'days').toString();
-      const countdown = moment(then - now);
+      const now = moment().tz(timezone);
+      const days = timeTillDate.diff(now, 'days').toString();
+      const countdown = moment(timeTillDate - now);
       const hours = countdown.format('HH');
       const minutes = countdown.format('mm');
       const seconds = countdown.format('ss');

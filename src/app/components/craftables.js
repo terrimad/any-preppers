@@ -17,7 +17,7 @@ export default ({
           const multiplier = multipliers[key] || 1;
 
           return <ListItem key={key}>
-            <Entity hasAmount={!!amount} id={key} onWheel={(e) => onScroll(e, key)} />
+            <Entity amount={amount} id={key} onWheel={(e) => onScroll(e, key)} />
             {!!amount && <Amount>{multiplier * amount}x</Amount>}
           </ListItem>
         })}
@@ -27,7 +27,7 @@ export default ({
 
 const Entity = styled(EntityBase)`
   transition: 200ms ease-out filter;
-  ${p => !p.hasAmount && 'filter: grayscale(1);'}
+  ${p => p.amount === 0 && 'filter: grayscale(1);'}
 `;
 
 const Wrapper = styled.div`

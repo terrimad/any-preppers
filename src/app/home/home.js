@@ -1,15 +1,14 @@
 import styled from '@emotion/styled';
-import moment from 'moment';
 import React from 'react';
 
-import { Link as CraftingLink } from '../crafting';
+import { Link as ConsumablesLink } from '../consumables';
 import { Box as DarkmoonFaireBox } from '../darkmoon-faire';
 
 export default () => {
   return <Wrapper>
     <List>
       <ListItem>
-        <CraftingLink />
+        <ConsumablesLink />
       </ListItem>
       <ListItem>
         <DarkmoonFaireBox />

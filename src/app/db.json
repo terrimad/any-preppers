@@ -210,8 +210,12 @@
     }
   },
   "darkmoon-faire": {
+    "jan": {},
+    "feb": {},
+    "mar": {},
+    "apr": {},
     "may": {
-      "location": "Elwynn",
+      "location": "Elwynn Forest",
       "starts": "2020-05-04",
       "ends": "2020-05-11"
     },
@@ -221,7 +225,7 @@
       "ends": "2020-06-15"
     },
     "jul": {
-      "location": "Elwynn",
+      "location": "Elwynn Forest",
       "starts": "2020-07-06",
       "ends": "2020-07-13"
     },
@@ -231,7 +235,7 @@
       "ends": "2020-08-17"
     },
     "sep": {
-      "location": "Elwynn",
+      "location": "Elwynn Forest",
       "starts": "2020-09-07",
       "ends": "2020-09-14"
     },
@@ -241,7 +245,7 @@
       "ends": "2020-10-12"
     },
     "nov": {
-      "location": "Elwynn",
+      "location": "Elwynn Forest",
       "starts": "2020-11-09",
       "ends": "2020-11-16"
     },

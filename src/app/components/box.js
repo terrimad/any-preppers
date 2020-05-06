@@ -2,17 +2,11 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 export default ({
-  title,
   children,
   image,
 }) => {
   return <Wrapper>
     <TextWrapper>
-      {title ?
-        <Title>
-          {title}
-        </Title> :
-        null}
       {children ?
         <Children>
           {children}
@@ -23,18 +17,12 @@ export default ({
   </Wrapper>
 };
 
-const Title = styled.span`
-  display: block;
-  width: 100%;
-  text-align: center;
-  line-height: calc(${p => p.theme.boxLabelSize} + 10px);
-  height: calc(${p => p.theme.boxLabelSize} + 10px);
-  font-size: ${p => p.theme.boxLabelSize};
-`;
-
 const Children = styled.div`
   margin: 15px 0 0;
   font-size: 20px;
+  * {
+    font-weight: ${p => p.theme.textFontWeight};
+  }
 `;
 
 const TextWrapper = styled.div`
@@ -48,6 +36,7 @@ const TextWrapper = styled.div`
   text-align: center;
   flex-direction: column;
   justify-content: center;
+  text-shadow: 2px 2px 4px #000000;
 `;
 
 const Wrapper = styled.div`

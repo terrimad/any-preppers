@@ -2,14 +2,14 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { Link } from 'wouter';
 
-import { Entity } from '../components';
+import { Entity, Title } from '../components';
 import { useGenerateLocation } from '../utils';
 
 export default () => {
   const generateLocation = useGenerateLocation();
 
   return <Wrapper>
-    <Header>professions</Header>
+    <Title label="Professions" />
     <List>
       <ListItem>
         <Link href={generateLocation('/engineering')}>
@@ -33,16 +33,9 @@ const List = styled.ul`
   list-style: none;
   display: flex;
   justify-content: center;
+  margin: 15px 0 0;
 `;
 
 const ListItem = styled.li`
   margin: 0 10px;
-`;
-
-const Header = styled.h2`
-  font-size: 35px;
-  margin: 20px 0;
-  display: block;
-  text-align: center;
-  letter-spacing: 2px;
 `;

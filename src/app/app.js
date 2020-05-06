@@ -5,7 +5,7 @@ import React from 'react';
 import { Link, Route, Router, Switch } from 'wouter';
 
 import { SmugPepe } from './components';
-import { Alchemy, Engineering, Professions } from './consumables';
+import { Alchemy, Engineering, Profession, Professions } from './consumables';
 import { Home } from './home';
 import { TimezoneContext, useLocation, useTabbing } from './utils';
 
@@ -43,8 +43,12 @@ export default () => {
           <Switch>
             <Route path="/" component={Home} />
             <Route path="/consumables" component={Professions} />
-            <Route path="/consumables/engineering" component={Engineering} />
-            <Route path="/consumables/alchemy" component={Alchemy} />
+            <Route path="/consumables/engineering">
+              <Profession profession="engineering" label="Engineering" />
+            </Route>
+            <Route path="/consumables/alchemy">
+              <Profession profession="alchemy" label="Alchemy" />
+            </Route>
           </Switch>
         </Wrapper>
       </ThemeProvider>

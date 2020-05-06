@@ -42,11 +42,12 @@ const Entity = styled(EntityBase)`
 `;
 
 const Wrapper = styled.div`
-  padding: 20px 20%;
+  padding: 20px 10%;
 `;
 
 const List = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 `;
 

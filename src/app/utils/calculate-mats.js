@@ -1,7 +1,27 @@
-import getMats from './get-mats';
 
-export default (items) => {
+
+
+export default (items, db) => {
   const mats = {};
+
+  const getMats = (key, multiplier = 1, mats = {}) => {
+    const item = db[key];
+
+    if (item) {
+      Object
+        .keys(item)
+        .forEach((key) => {
+          const amount = item[key];
+          if (db[key]) {
+            getMats(key, amount, mats);
+          } else {
+            mats[key] = (mats[key] || 0) + (amount * multiplier);
+          }
+        });
+    }
+
+    return mats;
+  };
 
   Object
     .keys(items)

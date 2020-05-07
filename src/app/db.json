@@ -1,231 +1,82 @@
 {
   "crafting": {
-    "engineering": {
-      "id": "12656",
-      "type": "spell"
+    "engineering": [
+      "10646",
+      "18641",
+      "15993",
+      "4390"
+    ],
+    "alchemy": [
+      "13510",
+      "13512",
+      "13511",
+      "13444",
+      "13461",
+      "13457",
+      "13456",
+      "13458",
+      "13459",
+      "13454",
+      "13452",
+      "13446",
+      "13455",
+      "13442",
+      "3387",
+      "9206",
+      "9187"
+    ],
+    "blacksmithing": [
+      "18262"
+    ],
+    "recipes": {
+      "13423": "17551",
+      "10646": "12760",
+      "10505": "12585",
+      "10560": "12591",
+      "3860": "10097",
+      "15992": "19788",
+      "18641": "23070",
+      "15994": "19791",
+      "12359": "16153",
+      "15993": "19790",
+      "4390": "3962",
+      "3575": "3307",
+      "4377": "3945",
+      "19931": "24266",
+      "13513": "17638",
+      "13511": "17636",
+      "13506": "17634",
+      "13512": "17637",
+      "13510": "17635",
+      "18253": "22732",
+      "13444": "17580",
+      "13461": "17577",
+      "13457": "17574",
+      "13456": "17575",
+      "13458": "17576",
+      "13459": "17578",
+      "3824": "3449",
+      "20004": "24368",
+      "13454": "17573",
+      "20008": "24367",
+      "13462": "17572",
+      "13452": "17571",
+      "13455": "17570",
+      "13453": "17557",
+      "20002": "24366",
+      "20007": "24365",
+      "13446": "17556",
+      "13442": "17552",
+      "3387": "3175",
+      "9206": "11472",
+      "9187": "11467",
+      "18262": "22757"
     },
-    "alchemy": {
-      "id": "11611",
-      "type": "spell"
-    },
-    "blacksmithing": {
-      "id": "9785",
-      "type": "spell"
-    },
-    "goblin-sapper-charge": {
-      "id": "10646",
-      "type": "item",
-      "mats": {
-        "mageweave-cloth": 1,
-        "solid-blasting-powder": 3,
-        "unstable-trigger": 1
-      },
-      "craftable": true,
-      "profession": "engineering"
-    },
-    "thorium-grenade": {
-      "id": "15993",
-      "type": "item",
-      "mats": {
-        "thorium-widget": 1,
-        "thorium-bar": 3,
-        "dense-blasting-powder": 3,
-        "runecloth": 3
-      },
-      "craftable": true,
-      "profession": "engineering"
-    },
-    "dense-dynamite": {
-      "id": "18641",
-      "type": "item",
-      "mats": {
-        "dense-blasting-powder": 2,
-        "runecloth": 3
-      },
-      "craftable": true,
-      "profession": "engineering"
-    },
-    "thorium-widget": {
-      "id": "15994",
-      "type": "item",
-      "mats": {
-        "thorium-bar": 3,
-        "runecloth": 1
-      },
-      "profession": "engineering"
-    },
-    "unstable-trigger": {
-      "id": "10560",
-      "type": "item",
-      "mats": {
-        "mageweave-cloth": 1,
-        "mithril-bar": 1,
-        "solid-blasting-powder": 1
-      },
-      "profession": "engineering"
-    },
-    "mithril-bar": {
-      "id": "3860",
-      "type": "item",
-      "mats": {
-        "mithril-ore": 1
-      },
-      "profession": "engineering"
-    },
-    "thorium-bar": {
-      "id": "12359",
-      "type": "item",
-      "mats": {
-        "thorium-ore": 1
-      },
-      "profession": "engineering"
-    },
-    "solid-blasting-powder": {
-      "id": "10505",
-      "type": "item",
-      "mats": {
-        "solid-stone": 2
-      },
-      "profession": "engineering"
-    },
-    "dense-blasting-powder": {
-      "id": "15992",
-      "type": "item",
-      "mats": {
-        "dense-stone": 2
-      },
-      "profession": "engineering"
-    },
-    "dense-stone": {
-      "id": "12365",
-      "type": "item"
-    },
-    "solid-stone": {
-      "id": "7912",
-      "type": "item"
-    },
-    "thorium-ore": {
-      "id": "10620",
-      "type": "item"
-    },
-    "mithril-ore": {
-      "id": "3858",
-      "type": "item"
-    },
-    "mageweave-cloth": {
-      "id": "4338",
-      "type": "item"
-    },
-    "runecloth": {
-      "id": "14047",
-      "type": "item"
-    },
-    "elixir-of-the-mongoose": {
-      "id": "13452",
-      "type": "item",
-      "mats": {
-        "mountain-silversage": 2,
-        "plaguebloom": 2,
-        "crystal-vial": 1
-      },
-      "craftable": true,
-      "profession": "alchemy"
-    },
-    "flask-of-the-titans": {
-      "id": "13510",
-      "type": "item",
-      "mats": {
-        "gromsblood": 30,
-        "stonescale-oil": 30,
-        "black-lotus": 1,
-        "crystal-vial": 1
-      },
-      "craftable": true,
-      "profession": "alchemy"
-    },
-    "flask-of-distilled-wisdom": {
-      "id": "13511",
-      "type": "item",
-      "mats": {
-        "dreamfoil": 30,
-        "icecap": 10,
-        "black-lotus": 1,
-        "crystal-vial": 1
-      },
-      "craftable": true,
-      "profession": "alchemy"
-    },
-    "flask-of-supreme-power": {
-      "id": "13512",
-      "type": "item",
-      "mats": {
-        "dreamfoil": 30,
-        "mountain-silversage": 10,
-        "black-lotus": 1,
-        "crystal-vial": 1
-      },
-      "craftable": true,
-      "profession": "alchemy"
-    },
-    "stonescale-oil": {
-      "id": "13423",
-      "type": "item",
-      "mats": {
-        "stonescale-eel": 1,
-        "leaded-vial": 1
-      },
-      "profession": "alchemy"
-    },
-    "mountain-silversage": {
-      "id": "13465",
-      "type": "item"
-    },
-    "icecap": {
-      "id": "13467",
-      "type": "item"
-    },
-    "dreamfoil": {
-      "id": "13463",
-      "type": "item"
-    },
-    "gromsblood": {
-      "id": "8846",
-      "type": "item"
-    },
-    "black-lotus": {
-      "id": "13468",
-      "type": "item"
-    },
-    "plaguebloom": {
-      "id": "13466",
-      "type": "item"
-    },
-    "stonescale-eel": {
-      "id": "13422",
-      "type": "item"
-    },
-    "crystal-vial": {
-      "id": "8925",
-      "type": "item"
-    },
-    "leaded-vial": {
-      "id": "3372",
-      "type": "item"
-    },
-    "elemental-sharpening-stone": {
-      "id": "18262",
-      "type": "item",
-      "mats": {
-        "elemental-earth": 2,
-        "dense-stone": 3
-      },
-      "craftable": true,
-      "profession": "blacksmithing"
-    },
-    "elemental-earth": {
-      "id": "7067",
-      "type": "item"
-    }
+    "goyim": [
+      "4390",
+      "9206",
+      "9187"
+    ]
   },
   "darkmoon-faire": {
     "jan": {},

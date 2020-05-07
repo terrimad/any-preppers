@@ -5,7 +5,7 @@ import React from 'react';
 import { Link, Route, Router, Switch } from 'wouter';
 
 import { SmugPepe } from './components';
-import { Alchemy, Engineering, Profession, Professions } from './consumables';
+import { Profession, Professions } from './consumables';
 import { Home } from './home';
 import { TimezoneContext, useLocation, useTabbing } from './utils';
 
@@ -61,7 +61,7 @@ export default () => {
 
 const Wrapper = styled.div`
   * {
-    color: ${p => p.theme.textColor };
+      color: ${p => p.theme.textColor };
     font-family: ${p => p.theme.font };
   }
 
@@ -79,7 +79,7 @@ const Header = styled.h1`
   font-weight: 700;
   text-shadow: 2px 2px 4px #000000;
   a {
-    display: inline-flex;
+      display: inline-flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;

@@ -37,6 +37,7 @@
     "moment-timezone": "^0.5.28",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "regenerator-runtime": "^0.13.5",
     "wouter": "^2.4.0"
   }
 }

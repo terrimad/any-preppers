@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { Craftables, Mats, Title } from '../components'
-import { useMats, useRefreshLinks } from '../utils';
+import { CraftTable, Loader, Title } from '../components'
+import db from '../db.json';
+import { MaterialDbContext, buildMaterialDb } from '../utils';
 
 export default ({ profession, label }) => {
-  useRefreshLinks();
-  const [mats, items, handleMats] = useMats(profession);
+  const [materialDb, setMaterialDb] = useState({});
+  const [loading, setLoading] = useState(false);
+  const craftables = db?.crafting[profession] || [];
 
-  if (!profession) {
+  useEffect(
+    () => {
+      if (craftables) {
+        setLoading(true);
+        buildMaterialDb(craftables).then((materialDb) => {
+          setLoading(false);
+          setMaterialDb(materialDb);
+        });
+      }
+    },
+    [craftables],
+  );
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (!Object.keys(materialDb).length) {
     return null;
   }
 
-  return <>
-    <Title label={label} />
-    <Craftables items={items} update={handleMats} />
-    <Mats mats={mats} />
-  </>;
+  return <MaterialDbContext.Provider value={materialDb}>
+    <>
+      <Title label={label} />
+      <CraftTable profession={profession} />
+    </>
+  </MaterialDbContext.Provider>;
 }

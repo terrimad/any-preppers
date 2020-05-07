@@ -2,21 +2,19 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 import { focusStyling } from '../app';
-import { crafting } from '../db.json';
 import { useRefreshLinks } from '../utils';
 
-export default ({ id, ...other }) => {
-  const item = crafting[id];
+export default ({ id, type = 'item', ...other }) => {
   useRefreshLinks();
 
-  if (!item) {
+  if (!id) {
     return null;
   }
 
   return <Hyperlink
     {...other}
     target="_blank"
-    href={`https://classic.wowhead.com/${ item.type }=${ item.id }`}
+    href={`https://classic.wowhead.com/${ type }=${ id }`}
   />;
 }
 
@@ -25,7 +23,7 @@ export const Amount = styled.span`
   line-height: ${p => p.theme.amountLabelSize };
   font-weight: ${p => p.theme.titleFontWeight };
   line-height: normal;
-  margin: 15px 0 0 0;
+  margin: 8px 0 0 0;
 `;
 
 const Hyperlink = styled.a`

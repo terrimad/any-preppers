@@ -6,8 +6,8 @@ import { useMaterialDb, useStorageProvider } from './use-contexts';
 export default (type = '') => {
   const { session } = useStorageProvider();
   const materialDb = useMaterialDb();
-  const storageMatsKey = `any-preppers-${ type }-crafting-mats`;
-  const storageItemsKey = `any-preppers-${ type }-crafting-items`;
+  const storageMatsKey = `${ type }-crafting-mats`;
+  const storageItemsKey = `${ type }-crafting-items`;
 
   const storedMats = useMemo(() => session.get(storageMatsKey) || {}, []);
   const storedItems = useMemo(() => session.get(storageItemsKey) || {}, []);

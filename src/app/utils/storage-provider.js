@@ -13,18 +13,18 @@ class Storage {
   }
 
   get = (key) => {
-    const item = this.storage.getItem(key) || null;
+    const item = this.storage.getItem(`anypreppers.io:${ key }`) || null;
     return JSON.parse(item);
   };
 
-  remove = (key) => this.storage.removeItem(key);
+  remove = (key) => this.storage.removeItem(`anypreppers.io:${ key }`);
 
   add = (key, item) => {
     if (typeof item !== undefined) {
       if (typeof item === 'object') {
-        this.storage.setItem(key, JSON.stringify(item));
+        this.storage.setItem(`anypreppers.io:${ key }`, JSON.stringify(item));
       } else {
-        this.storage.setItem(key, item);
+        this.storage.setItem(`anypreppers.io:${ key }`, item);
       }
     }
   };

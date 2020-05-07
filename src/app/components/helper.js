@@ -8,7 +8,7 @@ import Title from './title';
 
 export default () => {
   const { local } = useStorageProvider();
-  const storedValue = local.get('has-read-any-preppers-how-to-basic');
+  const storedValue = local.get('has-read-how-to-basic');
   const [hasConfirmed, setHasConfirmed] = useState(!!storedValue)
 
   useEffect(
@@ -26,7 +26,7 @@ export default () => {
   const onConfirm = useCallback(
     () => {
       setHasConfirmed(true);
-      local.setItem('has-read-any-preppers-how-to-basic', true)
+      local.add('has-read-how-to-basic', true)
     },
     [setHasConfirmed],
   );

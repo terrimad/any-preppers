@@ -8,7 +8,7 @@ const tabbables = [
 ];
 
 export default () => {
-  const [tabbing, setTabbing] = useState(true);
+  const [tabbing, setTabbing] = useState(false);
 
   useEffect(
     () => {

@@ -47,5 +47,6 @@ const Wrapper = styled.div`
   position: relative;
   img {
     display: block;
+    width: 100%;
   }
 `;

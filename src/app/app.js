@@ -21,8 +21,8 @@ const theme = {
   amountLabelSize: '68px',
   boxLabelSize: '30px',
 
-  circleSize: '80px',
-  circleThickness: 2,
+  circleSize: '90px',
+  circleThickness: 3,
 };
 
 export default () => {
@@ -35,7 +35,7 @@ export default () => {
           <Header>
             <Link to="/">
               <a tabIndex="0" title="Home">
-                any preppers?
+                Any Preppers?
               <SmugPepe />
               </a>
             </Link>
@@ -61,7 +61,7 @@ export default () => {
 
 const Wrapper = styled.div`
   * {
-      color: ${p => p.theme.textColor };
+    color: ${p => p.theme.textColor };
     font-family: ${p => p.theme.font };
   }
 
@@ -79,10 +79,20 @@ const Header = styled.h1`
   font-weight: 700;
   text-shadow: 2px 2px 4px #000000;
   a {
-      display: inline-flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    img {
+      display: none;
+      margin: 0 0 0 15px;
+    }
+    
+    @media only screen and (min-width: 500px) {
+      img {
+        display: block;
+      }
+    }
     &:focus {
       ${p => focusStyling(p) }
     }

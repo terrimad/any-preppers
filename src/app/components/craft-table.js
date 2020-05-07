@@ -5,6 +5,7 @@ import db from '../db.json';
 import Goyim from '../images/goyim.png';
 import { useMats, useRefreshLinks } from '../utils';
 import Craftables, { Mats } from './craftables';
+import Helper from './helper';
 
 const goyimCheck = (items) => {
   return Object
@@ -34,6 +35,7 @@ export default ({ profession }) => {
     <Craftables items={items} update={handleMats} />
     <Mats mats={mats} />
     <Img shown={goyimCheck(items).toString()} src={Goyim} />
+    <Helper />
   </>
 }
 

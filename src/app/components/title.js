@@ -5,7 +5,7 @@ export default ({ label = '' }) => {
   return <Label>{label}</Label>;
 };
 
-const Label = styled.span`
+const Label = styled.h2`
   display: block;
   width: 100%;
   text-align: center;

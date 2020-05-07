@@ -1,17 +1,24 @@
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import db from '../db.json';
 import calculateMats from './calculate-mats';
-import MaterialDbContext from './material-db-context';
+import { useMaterialDb, useStorageProvider } from './use-contexts';
 
 export default (type = '') => {
-  const materialDb = useContext(MaterialDbContext)
-  const [mats, setMats] = useState({});
-  const [items, setItems] = useState({});
+  const { session } = useStorageProvider();
+  const materialDb = useMaterialDb();
+  const storageMatsKey = `any-preppers-${ type }-crafting-mats`;
+  const storageItemsKey = `any-preppers-${ type }-crafting-items`;
+
+  const storedMats = useMemo(() => session.get(storageMatsKey) || {}, []);
+  const storedItems = useMemo(() => session.get(storageItemsKey) || {}, []);
+
+  const [mats, setMats] = useState(storedMats);
+  const [items, setItems] = useState(storedItems);
 
   useEffect(
     () => {
-      if (type) {
+      if (type && !Object.keys(items).length) {
         const profession = db?.crafting[type];
         if (profession) {
           const items = profession.reduce(
@@ -22,30 +29,18 @@ export default (type = '') => {
             {},
           );
 
+          session.set(storageItemsKey, items);
           setItems(items);
         }
       }
     },
-    [type, setItems],
+    [type, items, setItems],
   );
 
-
-  const handleMats = useCallback(
-    (event, key) => {
-      const newItems = Object.assign({}, items);
-
-      if (event.nativeEvent.wheelDelta || event.key === 'ArrowUp' || event.key === 'ArrowDown') {
-        if (event.nativeEvent.wheelDelta > 0 || event.key === 'ArrowUp') {
-          newItems[key]++;
-        } else if (newItems[key] > 0) {
-          newItems[key]--;
-        }
-      }
-
-      setItems(newItems);
-
+  const updateMats = useCallback(
+    (items = {}) => {
       const mats = {};
-      const calculatedMats = calculateMats(newItems, materialDb);
+      const calculatedMats = calculateMats(items, materialDb);
 
       Object
         .keys(calculatedMats)
@@ -62,9 +57,29 @@ export default (type = '') => {
             });
         });
 
+      session.set(storageMatsKey, mats);
       setMats(mats);
     },
-    [mats, items, setMats, setItems, materialDb],
+    [setMats, materialDb],
+  );
+
+  const handleMats = useCallback(
+    (event, key) => {
+      const newItems = Object.assign({}, items);
+
+      if (event.nativeEvent.wheelDelta || event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+        if (event.nativeEvent.wheelDelta > 0 || event.key === 'ArrowUp') {
+          newItems[key]++;
+        } else if (newItems[key] > 0) {
+          newItems[key]--;
+        }
+      }
+
+      session.set(storageItemsKey, newItems);
+      setItems(newItems);
+      updateMats(newItems);
+    },
+    [items, updateMats, setItems],
   );
 
   return [mats, items, handleMats];

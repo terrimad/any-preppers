@@ -32,8 +32,8 @@ module.exports = (function () {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [['@babel/preset-env', { modules: false }], "@babel/preset-react"],
-            plugins: ['emotion']
+            presets: [['@babel/preset-env', { modules: false }], '@babel/preset-react'],
+            plugins: ['emotion', '@babel/plugin-proposal-class-properties']
           },
         },
       },

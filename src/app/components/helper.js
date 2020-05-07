@@ -3,11 +3,13 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { focusStyling } from '../app';
+import { useStorageProvider } from '../utils';
 import Title from './title';
 
 export default () => {
-  const storedValue = localStorage.getItem('has-read-any-preppers-how-to-basic');
-  const [hasConfirmed, setHasConfirmed] = useState(storedValue === 'true')
+  const { local } = useStorageProvider();
+  const storedValue = local.get('has-read-any-preppers-how-to-basic');
+  const [hasConfirmed, setHasConfirmed] = useState(!!storedValue)
 
   useEffect(
     () => {
@@ -24,7 +26,7 @@ export default () => {
   const onConfirm = useCallback(
     () => {
       setHasConfirmed(true);
-      localStorage.setItem('has-read-any-preppers-how-to-basic', true)
+      local.setItem('has-read-any-preppers-how-to-basic', true)
     },
     [setHasConfirmed],
   );

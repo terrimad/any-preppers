@@ -1,13 +1,13 @@
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { ThemeProvider } from 'emotion-theming'
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link, Route, Router, Switch } from 'wouter';
 
 import { SmugPepe } from './components';
 import { Profession, Professions } from './consumables';
 import { Home } from './home';
-import { TimezoneContext, useLocation, useTabbing } from './utils';
+import { StorageProvider, StorageProviderContext, TimezoneContext, useLocation, useTabbing } from './utils';
 
 const theme = {
   font: 'Open Sans',
@@ -27,35 +27,38 @@ const theme = {
 
 export default () => {
   const tabbing = useTabbing();
+  const storageProvider = useMemo(() => new StorageProvider(), []);
 
   return <Router hook={useLocation}>
-    <TimezoneContext.Provider value="Europe/Stockholm">
-      <ThemeProvider theme={{ ...theme, tabbing }}>
-        <Wrapper>
-          <Header>
-            <Link to="/">
-              <a tabIndex="0" title="Home">
-                Any Preppers?
+    <StorageProviderContext.Provider value={storageProvider}>
+      <TimezoneContext.Provider value="Europe/Stockholm">
+        <ThemeProvider theme={{ ...theme, tabbing }}>
+          <Wrapper>
+            <Header>
+              <Link to="/">
+                <a tabIndex="0" title="Home">
+                  Any Preppers?
               <SmugPepe />
-              </a>
-            </Link>
-          </Header>
-          <Switch>
-            <Route path="/" component={Home} />
-            <Route path="/consumables" component={Professions} />
-            <Route path="/consumables/engineering">
-              <Profession profession="engineering" label="Engineering" />
-            </Route>
-            <Route path="/consumables/alchemy">
-              <Profession profession="alchemy" label="Alchemy" />
-            </Route>
-            <Route path="/consumables/blacksmithing">
-              <Profession profession="blacksmithing" label="Blacksmithing" />
-            </Route>
-          </Switch>
-        </Wrapper>
-      </ThemeProvider>
-    </TimezoneContext.Provider>
+                </a>
+              </Link>
+            </Header>
+            <Switch>
+              <Route path="/" component={Home} />
+              <Route path="/consumables" component={Professions} />
+              <Route path="/consumables/engineering">
+                <Profession profession="engineering" label="Engineering" />
+              </Route>
+              <Route path="/consumables/alchemy">
+                <Profession profession="alchemy" label="Alchemy" />
+              </Route>
+              <Route path="/consumables/blacksmithing">
+                <Profession profession="blacksmithing" label="Blacksmithing" />
+              </Route>
+            </Switch>
+          </Wrapper>
+        </ThemeProvider>
+      </TimezoneContext.Provider>
+    </StorageProviderContext.Provider>
   </Router>;
 };
 

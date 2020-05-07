@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import db from '../db.json';
-import calculateMats from './calculate-mats';
 import { useMaterialDb, useStorageProvider } from './use-contexts';
 
 export default (type = '') => {
@@ -29,7 +28,7 @@ export default (type = '') => {
             {},
           );
 
-          session.set(storageItemsKey, items);
+          session.add(storageItemsKey, items);
           setItems(items);
         }
       }
@@ -37,10 +36,57 @@ export default (type = '') => {
     [type, items, setItems],
   );
 
+  const calculateMats = useCallback(
+    (items) => {
+      const mats = {};
+
+      const getMats = (key, multiplier = 1, mats = {}) => {
+        const item = materialDb[key];
+
+        if (item) {
+          Object
+            .keys(item)
+            .forEach((key) => {
+              const amount = item[key];
+              if (materialDb[key]) {
+                getMats(key, amount, mats);
+              } else {
+                mats[key] = (mats[key] || 0) + (amount * multiplier);
+              }
+            });
+        }
+
+        return mats;
+      };
+
+      Object
+        .keys(items)
+        .forEach((key) => {
+          const amount = items[key];
+          if (amount > 0) {
+            const subMats = getMats(key);
+
+            if (amount > 1) {
+              Object
+                .keys(subMats)
+                .forEach((key) => {
+                  subMats[key] = subMats[key] * amount;
+                });
+            }
+
+            mats[key] = subMats;
+          }
+        });
+
+      return mats;
+    },
+    [materialDb],
+  );
+
   const updateMats = useCallback(
     (items = {}) => {
       const mats = {};
-      const calculatedMats = calculateMats(items, materialDb);
+      const calculatedMats = calculateMats(items);
 
       Object
         .keys(calculatedMats)
@@ -57,10 +103,10 @@ export default (type = '') => {
             });
         });
 
-      session.set(storageMatsKey, mats);
+      session.add(storageMatsKey, mats);
       setMats(mats);
     },
-    [setMats, materialDb],
+    [setMats, calculateMats],
   );
 
   const handleMats = useCallback(
@@ -75,7 +121,7 @@ export default (type = '') => {
         }
       }
 
-      session.set(storageItemsKey, newItems);
+      session.add(storageItemsKey, newItems);
       setItems(newItems);
       updateMats(newItems);
     },

@@ -21,7 +21,11 @@ class Storage {
 
   add = (key, item) => {
     if (typeof item !== undefined) {
-      this.storage.setItem(key, item);
+      if (typeof item === 'object') {
+        this.storage.setItem(key, JSON.stringify(item));
+      } else {
+        this.storage.setItem(key, item);
+      }
     }
   };
 

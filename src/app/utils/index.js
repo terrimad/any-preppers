@@ -1,4 +1,3 @@
-export { default as calculateMats } from './calculate-mats';
 export { default as buildMaterialDb } from './build-material-db';
 export { default as fetchMats } from './fetch-mats';
 export { default as useMats } from './use-mats';

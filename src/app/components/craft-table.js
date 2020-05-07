@@ -32,25 +32,23 @@ export default ({ profession }) => {
   const [mats, items, handleMats] = useMats(profession);
 
   return <>
+    <Helper />
     <Craftables items={items} update={handleMats} />
     <Mats mats={mats} />
     <Img shown={goyimCheck(items).toString()} src={Goyim} />
-    <Helper />
   </>
 }
 
 const Img = styled.img`
   position: absolute;
+  bottom: 0px;
   height: 150px;
-  transition: bottom 200ms ease-out, left 200ms ease-out;
-  ${p => p.shown === 'true' ?
-    `
-      bottom: -35px;
-      left: -35px;
-    ` :
-    `
-      bottom: -150px;
-      left: -135px;
+  transition: left 100ms ease-out;
+  left: -135px;
+  ${p => p.shown === 'true' && `
+      @media only screen and (min-width: 1000px) {
+        left: -35px;
+      }
     `
   }
 `;

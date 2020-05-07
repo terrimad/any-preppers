@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { Global, css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { ThemeProvider } from 'emotion-theming'
 import React, { useMemo } from 'react';
@@ -12,6 +12,7 @@ import { StorageProvider, StorageProviderContext, TimezoneContext, useLocation, 
 const theme = {
   font: 'Open Sans',
 
+  backgroundColor: '#141414',
   textColor: '#F7F7F7',
   hordeColor: '#CF1F1F',
   allianceColor: '#3468CF',
@@ -25,20 +26,82 @@ const theme = {
   circleThickness: 3,
 };
 
+const globalCss = () => css`
+  html {
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: ${theme.backgroundColor };
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: ${theme.textColor };
+    }
+  }
+
+  
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ol,
+  ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+  }
+
+  #root {
+    transition: filter 200ms ease-out;
+
+    &.blur {
+      filter: blur(10px);
+    }
+  }
+`;
+
 export default () => {
   const tabbing = useTabbing();
   const storageProvider = useMemo(() => new StorageProvider(), []);
-
   return <Router hook={useLocation}>
     <StorageProviderContext.Provider value={storageProvider}>
       <TimezoneContext.Provider value="Europe/Stockholm">
         <ThemeProvider theme={{ ...theme, tabbing }}>
+          <Global styles={globalCss} />
           <Wrapper>
             <Header>
               <Link to="/">
                 <a tabIndex="0" title="Home">
                   Any Preppers?
-              <SmugPepe />
+                  <SmugPepe />
                 </a>
               </Link>
             </Header>

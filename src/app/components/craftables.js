@@ -84,17 +84,4 @@ export const ListItem = styled.li`
 
 export const MatsList = styled(List)`
   border-top: 1px solid ${p => p.theme.textColor };
-  
-  overflow-y: overlay;
-  ::-webkit-scrollbar {
-    width: 4px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: ${p => p.theme.textColor };
-  }
 `;

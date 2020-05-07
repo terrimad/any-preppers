@@ -1,5 +1,4 @@
 export { default as buildMaterialDb } from './build-material-db';
-export { default as fetchMats } from './fetch-mats';
 export { default as useMats } from './use-mats';
 export { default as useRefreshLinks } from './use-refresh-links';
 export { polarToCartesian, mapNumber, describeArc } from './countdown';

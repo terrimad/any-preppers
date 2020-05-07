@@ -28,7 +28,7 @@ export default (type = '') => {
             {},
           );
 
-          session.add(storageItemsKey, items);
+          session.set(storageItemsKey, items);
           setItems(items);
         }
       }
@@ -103,7 +103,7 @@ export default (type = '') => {
             });
         });
 
-      session.add(storageMatsKey, mats);
+      session.set(storageMatsKey, mats);
       setMats(mats);
     },
     [setMats, calculateMats],
@@ -121,7 +121,7 @@ export default (type = '') => {
         }
       }
 
-      session.add(storageItemsKey, newItems);
+      session.set(storageItemsKey, newItems);
       setItems(newItems);
       updateMats(newItems);
     },

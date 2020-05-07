@@ -19,7 +19,7 @@ class Storage {
 
   remove = (key) => this.storage.removeItem(`anypreppers.io:${ key }`);
 
-  add = (key, item) => {
+  set = (key, item) => {
     if (typeof item !== undefined) {
       if (typeof item === 'object') {
         this.storage.setItem(`anypreppers.io:${ key }`, JSON.stringify(item));

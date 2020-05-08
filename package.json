@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Simple application for crafting explosives in WoW Classic",
   "main": "dist/index.js",
-  "homepage": "https://terrimad.github.io/any-preppers",
+  "homepage": "https://www.anypreppers.io",
   "scripts": {
     "start": "node src/server/server.js",
     "build": ".\\node_modules\\.bin\\webpack --mode production",

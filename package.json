@@ -10,8 +10,7 @@
     "build": ".\\node_modules\\.bin\\webpack --mode production",
     "build-dev": ".\\node_modules\\.bin\\webpack --mode development",
     "test": "yarn",
-    "predeploy": "yarn build",
-    "deploy": "yarn run build && echo 'anypreppers.io' > ./dist/CNAME && gh-pages -d dist"
+    "deploy": "yarn run build && cp CNAME dist && gh-pages -d dist"
   },
   "keywords": [],
   "author": {

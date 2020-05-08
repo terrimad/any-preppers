@@ -9,7 +9,7 @@
     "start": "node src/server/server.js",
     "build": ".\\node_modules\\.bin\\webpack --mode production",
     "build-dev": ".\\node_modules\\.bin\\webpack --mode development",
-    "test": "",
+    "test": "yarn",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist"
   },

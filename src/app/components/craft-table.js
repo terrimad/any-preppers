@@ -28,8 +28,11 @@ const goyimCheck = (items) => {
 
 export default ({ profession }) => {
   useRefreshLinks();
-
   const [mats, items, handleMats] = useMats(profession);
+
+  if (!Object.keys(items).length) {
+    return null;
+  }
 
   return <>
     <Helper />

@@ -10,7 +10,7 @@ import { Home } from './home';
 import { StorageProvider, StorageProviderContext, TimezoneContext, useLocation, useTabbing } from './utils';
 
 const theme = {
-  font: 'Open Sans',
+  font: 'Lato',
 
   backgroundColor: '#141414',
   textColor: '#F7F7F7',

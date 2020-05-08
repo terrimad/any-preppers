@@ -11,7 +11,7 @@ before_deploy:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: 90f68d9a1fff8c9774864d63fb554a052a513919
+  github_token: $GITHUB_TOKEN
   local_dir: dist
   on:
     branch: master

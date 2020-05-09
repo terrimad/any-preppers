@@ -1,8 +1,8 @@
 {
-  "name": "crafty",
-  "productName": "crafty",
-  "version": "1.0.0",
-  "description": "Simple application for crafting explosives in WoW Classic",
+  "name": "any-preppers",
+  "productName": "Any Preppers",
+  "version": "1.0.0.beta",
+  "description": "Quality of life stuff for WoW Classic",
   "main": "dist/index.js",
   "homepage": "https://anypreppers.io",
   "scripts": {

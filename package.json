@@ -1,7 +1,7 @@
 {
   "name": "any-preppers",
   "productName": "Any Preppers",
-  "version": "1.0.0.beta",
+  "version": "1.0.0",
   "description": "Quality of life stuff for WoW Classic",
   "main": "dist/index.js",
   "homepage": "https://anypreppers.io",

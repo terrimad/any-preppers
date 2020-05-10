@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import db from '../db.json';
-import { useMaterialDb, useStorageProvider } from './use-contexts';
+import { useEntityDb, useStorageProvider } from './use-contexts';
 
 export default (type = '') => {
   const { session } = useStorageProvider();
-  const materialDb = useMaterialDb();
+  const entityDb = useEntityDb();
   const storageMatsKey = `${ type }-crafting-mats`;
   const storageItemsKey = `${ type }-crafting-items`;
 
@@ -39,16 +39,16 @@ export default (type = '') => {
   const calculateMats = useCallback(
     (items) => {
       const mats = {};
-
       const getMats = (key, multiplier = 1, mats = {}) => {
-        const item = materialDb[key];
+        const item = entityDb[key];
 
-        if (item) {
+        if (item && item.reagents) {
           Object
-            .keys(item)
+            .keys(item.reagents)
             .forEach((key) => {
-              const amount = item[key];
-              if (materialDb[key]) {
+              const amount = item.reagents[key];
+              const subItem = entityDb[key];
+              if (subItem && subItem.reagents && Object.keys(subItem.reagents).length) {
                 getMats(key, amount, mats);
               } else {
                 mats[key] = (mats[key] || 0) + (amount * multiplier);
@@ -80,7 +80,7 @@ export default (type = '') => {
 
       return mats;
     },
-    [materialDb],
+    [entityDb],
   );
 
   const updateMats = useCallback(

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React, { useCallback } from 'react';
 
-import { useRefreshLinks } from '../utils';
+import { useEntityDb, useRefreshLinks } from '../utils';
 import Entity, { Amount } from './entity';
 
 export default ({
@@ -9,6 +9,7 @@ export default ({
   items = {},
   update = () => { }
 }) => {
+  const entityDb = useEntityDb();
   useRefreshLinks();
 
   const handleInteraction = useCallback(
@@ -38,9 +39,16 @@ export default ({
         .keys(items)
         .sort()
         .map((key) => {
+          const item = entityDb[key];
+
+          if (!item) {
+            return null;
+          }
+
           return <ListItem key={key}>
             <Entity
               id={key}
+              icon={item.icon}
               onWheel={e => handleInteraction(e, key)}
               onKeyDown={e => handleInteraction(e, key)} />
           </ListItem>
@@ -51,6 +59,8 @@ export default ({
 };
 
 export const Mats = ({ mats = {} }) => {
+  const entityDb = useEntityDb();
+
   if (Object.keys(mats).length === 0) {
     return null;
   }
@@ -60,8 +70,17 @@ export const Mats = ({ mats = {} }) => {
       .keys(mats)
       .sort()
       .map(key => {
+        const item = entityDb[key];
+
+        if (!item) {
+          return null;
+        }
+
         return <ListItem key={key}>
-          <Entity id={key} />
+          <Entity
+            id={key}
+            icon={item.icon}
+          />
           <Amount>{mats[key]}x</Amount>
         </ListItem>;
       })}

@@ -4,7 +4,7 @@ import React from 'react';
 import { focusStyling } from '../app';
 import { useRefreshLinks } from '../utils';
 
-export default ({ id, type = 'item', ...other }) => {
+export default ({ id, icon, type = 'item', ...other }) => {
   useRefreshLinks();
 
   if (!id) {
@@ -14,8 +14,9 @@ export default ({ id, type = 'item', ...other }) => {
   return <Hyperlink
     {...other}
     target="_blank"
-    href={`https://classic.wowhead.com/${ type }=${ id }`}
-  />;
+    href={`https://classic.wowhead.com/${ type }=${ id }`}>
+    <img alt={`${icon}_icon`} src={`https://wow.zamimg.com/images/wow/icons/large/${ icon }.jpg`} />
+  </Hyperlink>;
 }
 
 export const Amount = styled.span`

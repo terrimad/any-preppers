@@ -10,17 +10,17 @@ export default () => {
     <List>
       <ListItem>
         <Link href="/consumables/engineering">
-          <Entity id="12656" type="spell" />
+          <Entity id="12656" icon="trade_engineering" type="spell" />
         </Link>
       </ListItem>
       <ListItem>
         <Link href="/consumables/alchemy">
-          <Entity id="11611" type="spell" />
+          <Entity id="11611" icon="trade_alchemy" type="spell" />
         </Link>
       </ListItem>
       <ListItem>
         <Link href="/consumables/blacksmithing">
-          <Entity id="9785" type="spell" />
+          <Entity id="9785" icon="trade_blacksmithing" type="spell" />
         </Link>
       </ListItem>
     </List>

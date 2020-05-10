@@ -8,4 +8,4 @@ export { default as Title } from './title';
 export { default as Loader } from './loader';
 export { default as CraftTable } from './craft-table';
 export { default as Helper } from './helper';
-export { default as MaterialDbProvider } from './material-db-provider';
+export { default as EntityDbProvider } from './entity-db-provider';

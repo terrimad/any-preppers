@@ -30,5 +30,9 @@ export const Amount = styled.span`
 const Hyperlink = styled.a`
   &:focus {
     ${p => focusStyling(p) }
-  } 
+  }
+  img {
+    display: block;
+    ${p => p.theme.borderColor && `border: 1px solid ${ p.theme.borderColor };` }
+  }
 `;

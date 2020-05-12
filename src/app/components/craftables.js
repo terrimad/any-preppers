@@ -102,5 +102,5 @@ export const ListItem = styled.li`
 `;
 
 export const MatsList = styled(List)`
-  border-top: 1px solid ${p => p.theme.textColor };
+  ${p => p.theme.borderColor && `border-top: 1px solid ${ p.theme.borderColor };` }
 `;

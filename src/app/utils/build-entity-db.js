@@ -59,16 +59,18 @@ export default async (ids) => {
   const entities = {};
 
   const addRecipe = async (id) => {
-    const recipeId = crafting.recipes[id];
-    if (recipeId) {
-      const recipe = await fetchEntity(recipeId, 'spell');
-      if (recipe) {
-        entities[id] = recipe;
-        await chainPromises(Object.keys(recipe.reagents), addRecipe);
+    if (!entities[id]) {
+      const recipeId = crafting.recipes[id];
+      if (recipeId) {
+        const recipe = await fetchEntity(recipeId, 'spell');
+        if (recipe) {
+          entities[id] = recipe;
+          await chainPromises(Object.keys(recipe.reagents), addRecipe);
+        }
+      } else if (!entities[id]) {
+        const item = await fetchEntity(id, 'item');
+        entities[id] = item;
       }
-    } else {
-      const item = await fetchEntity(id, 'item');
-      entities[id] = item;
     }
     return Promise.resolve();
   };

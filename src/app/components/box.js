@@ -42,7 +42,7 @@ const TextWrapper = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: block;
-  border-radius: 10px;
+  ${p => p.theme.borderColor && `border: 1px solid ${ p.theme.borderColor };` }
   overflow: hidden;
   position: relative;
   img {

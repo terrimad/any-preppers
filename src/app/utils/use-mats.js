@@ -49,7 +49,7 @@ export default (type = '') => {
               const amount = item.reagents[key];
               const subItem = entityDb[key];
               if (subItem && subItem.reagents && Object.keys(subItem.reagents).length) {
-                getMats(key, amount, mats);
+                getMats(key, amount/item.divider, mats);
               } else {
                 mats[key] = (mats[key] || 0) + (amount * multiplier);
               }

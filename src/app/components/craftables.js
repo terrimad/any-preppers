@@ -81,7 +81,7 @@ export const Mats = ({ mats = {} }) => {
             id={key}
             icon={item.icon}
           />
-          <Amount>{mats[key]}x</Amount>
+          <Amount>{Math.ceil(mats[key])}x</Amount>
         </ListItem>;
       })}
   </MatsList>;

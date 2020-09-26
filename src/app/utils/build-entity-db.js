@@ -3,6 +3,8 @@ import { crafting } from '../db.json';
 const tools = ['Blacksmith Hammer', 'Mining Pick', 'Arclight Spanner', 'Skinning Knife', 'Gyromatic Micro-Adjustor'];
 
 export const fetchEntity = (id, type) => {
+  const { dividers } = crafting;
+
   return fetch(`https://classic.wowhead.com/tooltip/${ type }/${ id }`)
     .then(response => response.json())
     .then(({ tooltip, icon } = {}) => {
@@ -41,6 +43,8 @@ export const fetchEntity = (id, type) => {
           );
       }
 
+      entity.divider = dividers[id] || 1;
+
       return entity;
     });
 };
@@ -57,10 +61,11 @@ export const chainPromises = async (arr, promise) => {
 
 export default async (ids) => {
   const entities = {};
+  const { recipes } = crafting;
 
   const addRecipe = async (id) => {
     if (!entities[id]) {
-      const recipeId = crafting.recipes[id];
+      const recipeId = recipes[id];
       if (recipeId) {
         const recipe = await fetchEntity(recipeId, 'spell');
         if (recipe) {

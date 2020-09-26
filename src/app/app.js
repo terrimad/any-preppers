@@ -10,18 +10,20 @@ import { Home } from './home';
 import { StorageProvider, StorageProviderContext, TimezoneContext, useLocation, useTabbing } from './utils';
 
 const theme = {
-  font: 'Lato',
+  font: 'Roboto',
 
   backgroundColor: '#141414',
   textColor: '#F7F7F7',
   hordeColor: '#CF1F1F',
   allianceColor: '#3468CF',
+  borderColor: '#B5B5B5',
 
   titleFontWeight: '400',
   textFontWeight: '300',
   amountLabelSize: '68px',
   boxLabelSize: '30px',
 
+  
   circleSize: '90px',
   circleThickness: 3,
 };

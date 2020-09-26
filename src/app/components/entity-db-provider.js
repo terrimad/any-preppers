@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 import db from '../db.json';
-import { MaterialDbContext, buildMaterialDb, useStorageProvider } from '../utils';
+import { EntityDbContext, buildEntityDb, useStorageProvider } from '../utils';
 import Loader from './loader';
 
 export default ({ profession, children }) => {
   const { session } = useStorageProvider();
-  const storageDbKey = `${ profession }-material-db`;
+  const storageDbKey = `${ profession }-entity-db`;
   const storedMaterialDb = session.get(storageDbKey) || {}
 
   const [materialDb, setMaterialDb] = useState(storedMaterialDb);
@@ -18,7 +18,7 @@ export default ({ profession, children }) => {
 
       if (craftables && !Object.keys(materialDb).length) {
         setLoading(true);
-        buildMaterialDb(craftables).then((materialDb) => {
+        buildEntityDb(craftables).then((materialDb) => {
           setLoading(false);
           session.set(storageDbKey, materialDb);
           setMaterialDb(materialDb);
@@ -32,7 +32,7 @@ export default ({ profession, children }) => {
     return <Loader />;
   }
 
-  return <MaterialDbContext.Provider value={materialDb}>
+  return <EntityDbContext.Provider value={materialDb}>
     {children}
-  </MaterialDbContext.Provider>;
+  </EntityDbContext.Provider>;
 }

@@ -1,18 +1,18 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
-import { CraftTable, MaterialDbProvider, Title } from '../components'
+import { CraftTable, EntityDbProvider, Title } from '../components'
 import { useRefreshLinks } from '../utils';
 
 export default ({ profession, label }) => {
   useRefreshLinks();
 
-  return <MaterialDbProvider profession={profession}>
+  return <EntityDbProvider profession={profession}>
     <Wrapper>
       <Title label={label} />
       <CraftTable profession={profession} />
     </Wrapper>
-  </MaterialDbProvider>;
+  </EntityDbProvider>;
 }
 
 const Wrapper = styled.div`

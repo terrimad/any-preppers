@@ -21,7 +21,7 @@ class Storage {
 
   set = (key, item) => {
     if (typeof item !== undefined) {
-      if (typeof item === 'object') {
+      if (typeof item === 'object' || typeof item === 'string') {
         this.storage.setItem(`anypreppers.io:${ key }`, JSON.stringify(item));
       } else {
         this.storage.setItem(`anypreppers.io:${ key }`, item);

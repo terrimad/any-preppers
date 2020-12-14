@@ -6,8 +6,9 @@ import { Link, Route, Router, Switch } from 'wouter';
 
 import { SmugPepe } from './components';
 import { Profession, Professions } from './consumables';
+import db from './db.json';
 import { Home } from './home';
-import { StorageProvider, StorageProviderContext, TimezoneContext, useLocation, useTabbing } from './utils';
+import { StorageProvider, StorageProviderContext, TimezoneContext, generateHash, useLocation, useTabbing } from './utils';
 
 const theme = {
   font: 'Roboto',
@@ -93,6 +94,7 @@ const globalCss = () => css`
 export default () => {
   const tabbing = useTabbing();
   const storageProvider = useMemo(() => new StorageProvider(), []);
+  
   return <Router hook={useLocation}>
     <StorageProviderContext.Provider value={storageProvider}>
       <TimezoneContext.Provider value="Europe/Stockholm">

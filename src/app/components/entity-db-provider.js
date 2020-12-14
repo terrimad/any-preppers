@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
 import db from '../db.json';
-import { EntityDbContext, buildEntityDb, useStorageProvider } from '../utils';
+import { EntityDbContext, buildEntityDb, generateHash, useStorageProvider } from '../utils';
 import Loader from './loader';
 
 export default ({ profession, children }) => {
-  const { session } = useStorageProvider();
+  const { local } = useStorageProvider();
+
   const storageDbKey = `${ profession }-entity-db`;
-  const storedMaterialDb = session.get(storageDbKey) || {}
+  const storageCacheHashKey = `${ profession }-cache-hash`;
+  const storedMaterialDb = local.get(storageDbKey) || {}
 
   const [materialDb, setMaterialDb] = useState(storedMaterialDb);
   const [loading, setLoading] = useState(false);
@@ -16,16 +18,20 @@ export default ({ profession, children }) => {
     () => {
       const craftables = db?.crafting[profession] || [];
 
-      if (craftables && !Object.keys(materialDb).length) {
+      const hash = generateHash(JSON.stringify(craftables));
+      const stored = local.get(storageCacheHashKey);
+
+      if (craftables.length && (!Object.keys(materialDb).length || stored !== hash)) {
         setLoading(true);
         buildEntityDb(craftables).then((materialDb) => {
           setLoading(false);
-          session.set(storageDbKey, materialDb);
+          local.set(storageDbKey, materialDb);
+          local.set(storageCacheHashKey, hash);
           setMaterialDb(materialDb);
         });
       }
     },
-    [materialDb],
+    [materialDb, local],
   );
 
   if (loading) {

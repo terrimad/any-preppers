@@ -7,3 +7,4 @@ export { useTimezone, useEntityDb, useStorageProvider } from './use-contexts';
 export { default as useTabbing } from './use-tabbing';
 export { default as useLocation } from './use-location';
 export { default as StorageProvider } from './storage-provider';
+export { default as generateHash } from './generate-hash';

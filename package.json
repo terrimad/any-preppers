@@ -7,8 +7,8 @@
   "homepage": "https://anypreppers.io",
   "scripts": {
     "start": "node src/server/server.js",
-    "build": ".\\node_modules\\.bin\\webpack --mode production",
-    "build-dev": ".\\node_modules\\.bin\\webpack --mode development",
+    "build": "./node_modules/.bin/webpack --mode production",
+    "build-dev": "./node_modules/.bin/webpack --mode development",
     "test": "yarn",
     "deploy": "gh-pages -d dist"
   },

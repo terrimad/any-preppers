@@ -104,10 +104,26 @@
     ]
   },
   "darkmoon-faire": {
-    "jan": {},
-    "feb": {},
-    "mar": {},
-    "apr": {},
+    "jan": {
+      "location": "Elwynn Forest",
+      "starts": "2021-01-04 05:00",
+      "ends": "2021-01-11 05:00"
+    },
+    "feb": {
+      "location": "Mulgore",
+      "starts": "2021-02-08 05:00",
+      "ends": "2021-02-15 05:00"
+    },
+    "mar": {
+      "location": "Elwynn Forest",
+      "starts": "2021-03-08 05:00",
+      "ends": "2021-03-15 05:00"
+    },
+    "apr": {
+      "location": "Mulgore",
+      "starts": "2021-03-29 05:00",
+      "ends": "2021-04-05 05:00"
+    },
     "may": {
       "location": "Elwynn Forest",
       "starts": "2020-05-04 05:00",

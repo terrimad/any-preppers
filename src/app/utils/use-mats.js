@@ -1,13 +1,15 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import db from '../db.json';
+import generateHash from './generate-hash';
 import { useEntityDb, useStorageProvider } from './use-contexts';
 
 export default (type = '') => {
-  const { session } = useStorageProvider();
+  const { session, local } = useStorageProvider();
   const entityDb = useEntityDb();
   const storageMatsKey = `${ type }-crafting-mats`;
   const storageItemsKey = `${ type }-crafting-items`;
+  const storageCacheHashKey = `${ type }-cache-hash`;
 
   const storedMats = useMemo(() => session.get(storageMatsKey) || {}, []);
   const storedItems = useMemo(() => session.get(storageItemsKey) || {}, []);
@@ -17,9 +19,12 @@ export default (type = '') => {
 
   useEffect(
     () => {
-      if (type && !Object.keys(items).length) {
-        const profession = db?.crafting[type];
-        if (profession) {
+      const profession = db?.crafting[type];
+      if (profession) {
+        const hash = generateHash(JSON.stringify(profession));
+        const stored = local.get(storageCacheHashKey);
+
+        if (type && (!Object.keys(items).length || stored !== hash)) {
           const items = profession.reduce(
             (acc, curr) => {
               acc[curr] = 0;
@@ -49,7 +54,7 @@ export default (type = '') => {
               const amount = item.reagents[key];
               const subItem = entityDb[key];
               if (subItem && subItem.reagents && Object.keys(subItem.reagents).length) {
-                getMats(key, amount/item.divider, mats);
+                getMats(key, amount / item.divider, mats);
               } else {
                 mats[key] = (mats[key] || 0) + (amount * multiplier);
               }

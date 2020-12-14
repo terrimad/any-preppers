@@ -121,6 +121,9 @@ export default () => {
               <Route path="/consumables/blacksmithing">
                 <Profession profession="blacksmithing" label="Blacksmithing" />
               </Route>
+              <Route path="/consumables/cooking">
+                <Profession profession="cooking" label="Cooking" />
+              </Route>
             </Switch>
           </Wrapper>
         </ThemeProvider>

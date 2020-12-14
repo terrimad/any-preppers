@@ -1,6 +1,6 @@
 import { crafting } from '../db.json';
 
-const tools = ['Blacksmith Hammer', 'Mining Pick', 'Arclight Spanner', 'Skinning Knife', 'Gyromatic Micro-Adjustor'];
+const tools = ['Blacksmith Hammer', "Philosopher's Stone", 'Mining Pick', 'Arclight Spanner', 'Skinning Knife', 'Gyromatic Micro-Adjustor'];
 
 export const fetchEntity = (id, type) => {
   const { dividers } = crafting;

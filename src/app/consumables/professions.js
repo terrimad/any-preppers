@@ -23,6 +23,11 @@ export default () => {
           <Entity id="9785" icon="trade_blacksmithing" type="spell" />
         </Link>
       </ListItem>
+      <ListItem>
+        <Link href="/consumables/cooking">
+          <Entity id="18260" icon="inv_misc_food_15" type="spell" />
+        </Link>
+      </ListItem>
     </List>
   </ >
 };
